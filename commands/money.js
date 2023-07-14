@@ -1,8 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const UserDAO = require('../UserDAO.js');
-const udao = require('../UserDAO.js');
 
-var dao = new UserDAO();
 
 
 
@@ -61,25 +58,25 @@ module.exports = {
 
 
 }
-function setMoney(userID) {
-    dao.setMoney(target, qtd).then(() => {
+// function setMoney(userID) {
+//     dao.setMoney(target, qtd).then(() => {
 
-    })
-        .catch((err) => {
-            console.error(err);
-        })
-        .finally(() => {
-            dao.con.end();
-        });
-}
-function getMoney(id) {
-    dao.getMoney(id).then(function (rows) {
-        if (rows.length <= 0) return 0;
-        return rows[0]['money'];
-    }).catch((err) => setImmediate(() => {
-        throw err;
-    })).finally(() => {
-        dao.con.end();
-    });
-    return 0;
-}
+//     })
+//         .catch((err) => {
+//             console.error(err);
+//         })
+//         .finally(() => {
+//             dao.con.end();
+//         });
+// }
+// function getMoney(id) {
+//     dao.getMoney(id).then(function (rows) {
+//         if (rows.length <= 0) return 0;
+//         return rows[0]['money'];
+//     }).catch((err) => setImmediate(() => {
+//         throw err;
+//     })).finally(() => {
+//         dao.con.end();
+//     });
+//     return 0;
+// }
